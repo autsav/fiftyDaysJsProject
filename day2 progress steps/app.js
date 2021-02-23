@@ -26,6 +26,7 @@ prev.addEventListener('click', ()=>{
         button();
     }
 })
+
 function update(){
     // console.log(currentActive);
     circles.forEach((circle, index)=>{
