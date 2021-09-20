@@ -1,36 +1,36 @@
 @import url('https://fonts.googleapis.com/css2?family=Muli&display=swap');
+
 :root{
-    --line-border-fill: rgb(26, 141, 156);
-    --line-border-empty: rgb(224, 216, 216);
+    --line-border-fill: #3498db;
+    --line-border-empty: #e0e0e0;
+
 }
 *{
     box-sizing: border-box;
 }
+
 body{
-    background-color:rgb(245, 241, 237);
-    font-family:'Muli', 'sans-serif';
+    background-color: #f6f7fb;
+    font-family: 'Muli', sans-serif;
     display: flex;
+    /* flex-direction: column; */
     align-items: center;
-    justify-content:center;
+    justify-content: center;
     height: 100vh;
-    margin: 0;
     overflow: hidden;
+    margin: 0;
 }
 .container{
-    /* background-color: brown; */
     text-align: center;
-    /* display: flex; */
 }
 .progress-container{
-     display: flex;
-    margin-bottom: 30px;
-    position: relative;
+    display: flex;
     justify-content: space-between;
+    position: relative;
+    margin-bottom: 30px;
     max-width: 100%;
-    width: 350px; 
-     /* background-color: brown;  */
+    width: 350px;
 }
-
 .progress-container::before{
     content: '';
     background-color:var(--line-border-empty);
@@ -49,26 +49,25 @@ body{
     left: 0;
     width: 0%;
     height: 4px;
-    transform: translateY(-50%) ;
+    transform: translateY(-50%);
     z-index: -1;
-    transition: 0.5s ease; 
+    transition: 0.5s ease;
 }
-
 .circle{
-   background-color:#fff;
-   color: #999;
-   height: 30px;
-   width: 30px;
-   border-radius: 50%;
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   border: 3px solid var(--line-border-empty);
-   /* transition: 0.009s ease; */
+    background-color: #fff;
+    color: #999;
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid var(--line-border-empty);
+    transition: .9s ease;
 }
 .circle.active{
-    border-color: var(--line-border-fill);
-
+    border-color:var(--line-border-fill);
+    transition: 0.1s ease;
 }
 .btn{
     background-color: var(--line-border-fill);
@@ -76,10 +75,10 @@ body{
     border: 0;
     border-radius: 6px;
     cursor: pointer;
-    font-family:inherit;
-    margin: 5px;
+    font-family: inherit;
     padding: 8px 30px;
-    font-family: 14px;
+    margin: 5px;
+    font-size: 14px;
 }
 .btn:active{
     transform: scale(0.98);
