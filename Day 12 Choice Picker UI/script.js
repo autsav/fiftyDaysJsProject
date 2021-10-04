@@ -3,63 +3,72 @@ const textarea = document.getElementById('textarea')
 
 textarea.focus()
 
-textarea.addEventListener('keyup', (e) =>{
-    createtags(e.target.value)
+textarea.addEventListener('keyup',(e)=>{
+    const input = e.target.value
+    createSpanTag(input)
+    if (e.key == 'Enter'){
+        setTimeout(()=>{
+            e.target.value = ''
+        }, 10)
+        randomSelect()
+    }
+   
 
-        if(e.key === 'Enter'){
-            setTimeout(()=>{
-                e.target.value = ''
-            }, 10)
-            randomSelect()
-        }
 })
 
-function createtags(input){
-    const tags = input.split(',').filter(tag =>tag.trim() !== '').map(tag => tag.trim())
-    // input.split()
+function createSpanTag(input){
+    const tags = input.split(',').filter(tag=> tag.trim()!== '').map(tag=>tag.trim())
+    // console.log(tags)
     tagsEl.innerHTML = ''
-
     tags.forEach(tag => {
-         const tagEl = document.createElement('span')
-         tagEl.classList.add('tag')
-         tagEl.innerText = tag
-         tagsEl.appendChild(tagEl)
+        console.log(tag)
+        const tagEl = document.createElement('span')
+        tagEl.classList.add('tag')
+        tagEl.innerText = tag
+        tagsEl.appendChild(tagEl)
     });
 }
 
 function randomSelect(){
     const times = 30
     const intervalTime = 100
+    const timeout = 100
+
     const interval = setInterval(() => {
-            const randomTag = pickRandomTag()
+        const randomTag =    pickRandomTag()
+        highLightTag(randomTag)
 
-            highLightTag(randomTag)
-
-            setTimeout(()=>{
-                unHighLightTag(randomTag)
-            },intervalTime)
+        setTimeout(() => {
+            unHighLightTag(randomTag)
+        }, intervalTime);
+        
     }, intervalTime);
 
-    setTimeout(()=>{
-            clearInterval(interval)
-            
-            setTimeout(()=>{
-                const randomTag = pickRandomTag()
-                highLightTag(randomTag)
-            },intervalTime)
-    }, times * intervalTime)
+    setTimeout(() => {
+        clearInterval(interval)
+
+        setTimeout(() => {
+            const randomTag = pickRandomTag()
+            highLightTag(randomTag)
+        }, timeout );
+        
+    }, timeout * times);
+
     
+    
+   
+   
 }
 function pickRandomTag(){
     const tags = document.querySelectorAll('.tag')
     return tags[Math.floor(Math.random() * tags.length)]
+}
+
+function highLightTag(tag){
+    tag.classList.add('highlight')
 
 }
-function highLightTag(tag)
-{
-    tag.classList.add('highlight')
-}
-function unHighLightTag(tag)
-{
+function unHighLightTag(tag){
     tag.classList.remove('highlight')
+
 }
