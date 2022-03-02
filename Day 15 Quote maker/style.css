@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Muli:wght@400;700&display=swap');
+:root{
+
+}
+*{
+    box-sizing: border-box;
+}
+body{
+    background-color: steelblue;
+    color: steelblue;
+    margin: 0;
+    font-family: 'Muli','sans-serif';
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    padding: 10px;
+}
+#wrapper{
+    background-color: rgb(250, 250, 250);
+    padding: 50px 60px;
+    border-radius: 5px;
+    text-align: center;
+    max-width: 100%;
+    width: 600px;
+}
+#quote-box{
+    padding:10px;
+    font-size: 25px;  
+    
+}
+.quote-author{
+    text-align: right;
+    font-size: 16px; 
+}
+#author{
+    float: right;
+    color: steelblue;
+
+}
+.buttons{
+    width: auto;
+    margin-top: 20px;
+    display: block;
+    position:relative;
+}
+
+.social-button{
+    float: left;
+}
+.buttons .btn {
+  float: right;
+    background-color: steelblue;
+   border: none;
+   padding: 14px 40px;
+   border-radius: 2px;
+   font-size: 12px;
+   letter-spacing: 0.5px; 
+   cursor: pointer;
+   color: #fff;
+}
+.btn:focus{
+    outline: none;
+    cursor: pointer;
+}
+.btn:hover{
+    opacity: 0.9;
+    cursor: pointer;
+}
+.btn:active{
+    transform: scale(0.98);
+    cursor: pointer;
+}
+.fa-stack{
+    margin-left: 2px;
+}
+.fa-twitter,.fa-tumblr {
+    background-color: steelblue;
+    border-radius: 50px;
+
+}
+

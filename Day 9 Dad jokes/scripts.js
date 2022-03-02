@@ -4,7 +4,7 @@ const jokeBtn = document.getElementById('JokeBtn')
 jokeBtn.addEventListener('click',()=>{
     generateJoke()
 })
-
+ 
 generateJoke()
 
 async function generateJoke(){
